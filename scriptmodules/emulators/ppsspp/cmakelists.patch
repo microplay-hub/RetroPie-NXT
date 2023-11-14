@@ -1,0 +1,21 @@
+diff -Naur old/CMakeLists.txt new/CMakeLists.txt
+--- old/CMakeLists.txt	2020-03-05 14:20:50.856836900 -0800
++++ new/CMakeLists.txt	2020-03-05 14:20:23.875474100 -0800
+@@ -67,7 +67,7 @@
+ 
+ if(NOT ANDROID AND NOT IOS)
+ 	if(ARM_DEVICE OR SIMULATOR)
+-		set(USING_EGL ON)
++		set(USING_EGL OFF)
+ 	endif()
+ endif()
+ 
+@@ -86,7 +86,7 @@
+ 
+ # We only support Vulkan on Unix, macOS (by MoltenVK), Android and Windows.
+ if(ANDROID OR WIN32 OR (UNIX AND NOT ARM_NO_VULKAN))
+-	set(VULKAN ON)
++	set(VULKAN OFF)
+ endif()
+ 
+ if(GOLD)
